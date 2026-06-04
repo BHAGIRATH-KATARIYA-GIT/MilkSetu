@@ -2,14 +2,14 @@
 
 import { Schema, model, Document, Types, models } from "mongoose";
 
-export interface Imilkman extends Document {
+export interface IMilkman extends Document {
   user_id: Types.ObjectId;
   business_name: string;
   service_radius_km: number;
   rating: number;
 }
 
-const milkmanSchema = new Schema<Imilkman>(
+const milkmanSchema = new Schema<IMilkman>(
   {
     user_id: {
       type: Schema.Types.ObjectId,
@@ -34,4 +34,4 @@ const milkmanSchema = new Schema<Imilkman>(
   },
 );
 
-export const Milkman = models?.Milkman || model<Imilkman>("Milkman", milkmanSchema);
+export const Milkman = models?.Milkman || model<IMilkman>("Milkman", milkmanSchema);

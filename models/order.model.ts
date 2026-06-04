@@ -1,6 +1,6 @@
 import { Schema, model, models, Document, Types } from "mongoose";
 
-export interface Iorder extends Document {
+export interface IOrder extends Document {
   milkman_id: Types.ObjectId;
   customer_id: Types.ObjectId;
   category: "Cow Milk" | "Buffalo Milk" | "Paneer" | "Curd" | "Ghee";
@@ -9,7 +9,7 @@ export interface Iorder extends Document {
   quantity: number;
 }
 
-const orderSchema = new Schema<Iorder>(
+const orderSchema = new Schema<IOrder>(
   {
     milkman_id: {
       type: Schema.Types.ObjectId,
@@ -48,6 +48,6 @@ const orderSchema = new Schema<Iorder>(
   },
 );
 
-const Order = models?.Order || model<Iorder>("Order", orderSchema);
+const Order = models?.Order || model<IOrder>("Order", orderSchema);
 
 export default Order;
